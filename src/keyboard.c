@@ -138,7 +138,7 @@ bool check_next_letter(char cur_letter, char next_letter) {
     if (cur_letter == next_letter) {                            // Проверяем, что клавиша нажата дважды подряд
         if (flag_re_press == true) {
             flag_re_press = false;
-            printf("The letter is using more than twice - %c!\n\n", cur_letter);
+            printf("The letter is using more than twice - %c!\n", cur_letter);
             return false;
         }
         flag_re_press = true;
