@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build with Makefile",
+            "type": "shell",
+            "command": "make",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Project",
+            "type": "shell",
+            "command": "${workspaceFolder}/ProjectForWork.exe",
+            "group": "test",
+            "problemMatcher": [],
+            "dependsOn": ["Build with Makefile"]
+        },
+        {
+            "label": "Debug Project",
+            "type": "shell",
+            "command": "gdb",
+            "args": [
+                "-q", 
+                "--args", 
+                "${workspaceFolder}/ProjectForWork.exe"
+            ],
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build and Run",
+            "type": "shell",
+            "command": "make && ${workspaceFolder}/ProjectForWork.exe",
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": ["Build with Makefile"]
+        }
+    ]
+}
